@@ -1,0 +1,63 @@
+table, th, td {
+    border: 1px solid #000;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    overflow-wrap: break-word;
+}
+
+th {
+    text-align: left;
+}
+
+.data-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+}
+
+.data-form input {
+    margin-bottom: 1rem;
+}
+
+tbody:nth-child(even) tr {
+    background-color: #eeeeee;
+}
+
+@media screen and (max-width: 500px) {
+    tr {
+        background-color: #ffffff !important;
+    }
+
+    table, thead, tbody, th, td, tr { 
+		display: block; 
+    }
+    
+    thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+    }
+	
+	td { 
+		border: none;
+		border-bottom: 1px solid #000; 
+        text-align: right;
+	}
+	
+	td:before { 
+        float: left;
+        font-weight: bold;
+    }
+
+    table > tbody:last-child td:last-child {
+        border-bottom: none;
+    }
+    
+    td:before {
+        content: attr(data-label);
+        padding-right: 1rem;
+    }
+}
